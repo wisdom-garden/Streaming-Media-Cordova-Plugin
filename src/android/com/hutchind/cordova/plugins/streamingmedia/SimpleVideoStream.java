@@ -132,9 +132,12 @@ public class SimpleVideoStream extends Activity implements
 	}
 
 	public void onCompletion(MediaPlayer mp) {
-		stop();
 		if (mShouldAutoClose) {
+			stop();
 			wrapItUp(RESULT_OK, null);
+		}
+		else {
+			pause();
 		}
 	}
 
